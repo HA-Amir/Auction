@@ -1,4 +1,4 @@
-const {event,user} =require("../server/database-mongodb/schemas.js")
+const {event,user} =require("./database-mongodb/schemas")
 
 var express = require("express");
 var app = express();
@@ -10,7 +10,7 @@ require("./config/passport")(passport);
 const nodemailer = require ('nodemailer')
 
 
-var server = app.listen(process.env.PORT||port, ()=>{
+var server = app.listen(port, ()=>{
     console.log(`Express server listening on  ${port}`)
 })
 
@@ -177,6 +177,6 @@ app.patch('/users/money/:id',(req,res)=>{
   })
 
   app.get('/',(req,res)=>{
-    res.send('!!!!!!working')
+    res.send('working')
   })
   
